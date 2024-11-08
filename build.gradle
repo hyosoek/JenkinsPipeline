@@ -3,6 +3,7 @@ plugins {
 	id 'org.springframework.boot' version '3.3.5'
 	id 'io.spring.dependency-management' version '1.1.6'
 	id 'jacoco'
+	id 'checkstyle'
 }
 
 jacocoTestCoverageVerification{
@@ -14,6 +15,12 @@ jacocoTestCoverageVerification{
 		}
 	}
 }
+
+checkstyle {
+	toolVersion = '10.20.1' // 사용 중인 Checkstyle 버전
+	configFile = file("${project.rootDir}/config/checkstyle/checkstyle.xml") // 설정 파일 경로
+}
+
 
 
 group = 'com.example'
